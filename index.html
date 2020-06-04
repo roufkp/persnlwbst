@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ind.css">
+    <title> Home </title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="left">
+                <div class="link">
+                    <a href="index.html">home</a>
+                </div>
+                <div class="link">
+                    <a href="about.html">about</a>
+                </div>
+                
+            </div>
+            <div class="right">
+                <div class="brand">
+                     ROUF KP
+                </div>
+            </div>
+        </div>
+        <div class="contents">
+            <div class="content2">
+                <div class="clock" style="background-image: url(clock.png);">
+                    <div class="hour">
+                        <div class="hr" id="hr"></div>
+                    </div>
+                    <div class="min">
+                        <div class="mn" id="mn"></div>
+                    </div>
+                    <div class="sec">
+                        <div class="sc" id="sc"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content1">
+                <div class="works">
+                    <h1>COLLECTION</h1>
+                    <div class="logo1">
+                       
+                    </div>
+                    <p>click here to get my works</p>
+                </div>
+                <div class="socialmedia">
+                    <h1>SOCIALITY?!</h1>
+                    <form action="get">
+                        <input type="email" name="mail" id="mail" placeholder="enter your email"><br>
+                        <input type="email" name="mail" id="mail" placeholder="enter your email"><br>
+                        
+                        <input type="text" id="msg" placeholder="message"><br>
+                        <input type="submit" value="send">
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript">
+        const deg = 6;
+        const hr =document.querySelector('#hr');
+        const mn = document.querySelector('#mn');
+        const sc = document.querySelector('#sc');
+
+        setInterval(()=>{
+            let day =new Date();
+            let hh =day.getHours() * 30;
+            let mm =day.getMinutes() * deg;
+            let ss =day.getSeconds() * deg;
+
+            hr.style.transform= `rotateZ( ${(hh)+(mm/12)}deg)`;
+            mn.style.transform= `rotateZ( ${mm} deg)`;
+            sc.style.transform= `rotateZ( ${ss} deg)`;
+
+
+        })
+            
+    </script>
+    
+</body>
+</html>
